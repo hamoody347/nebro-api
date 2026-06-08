@@ -7,6 +7,7 @@ namespace App\Providers;
 use App\Services\LoggingService;
 use App\Services\PaymentGatewayManager;
 use App\Services\SSOManager;
+use App\Services\TenantModuleService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(SSOManager::class);
         $this->app->singleton(PaymentGatewayManager::class);
         $this->app->singleton(LoggingService::class);
+        $this->app->singleton(TenantModuleService::class);
     }
 
     public function boot(): void

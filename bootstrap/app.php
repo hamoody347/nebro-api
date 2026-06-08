@@ -29,6 +29,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'permission'         => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
             'set_team'           => \App\Http\Middleware\SetPermissionsTeamId::class,
+            'require_module'     => \App\Http\Middleware\RequiresTenantModule::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
